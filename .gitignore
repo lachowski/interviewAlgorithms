@@ -69,5 +69,8 @@ local.properties
 # Annotation Processing
 .apt_generated
 
+# Maven
+log/
+target/
 
 # End of https://www.gitignore.io/api/eclipse
