@@ -13,7 +13,24 @@ package pl.mobigen.interviewAlgorithms;
 public class ReverseIntegerNumber {
 	
 	public static int reverse(int number) {
-		throw new UnsupportedOperationException();
+		// convert to string
+		int nPositive = Math.abs(number);
+		String nStr = String.valueOf(nPositive);
+		
+		// reverse string
+		String nReversed = "";
+		for (int i = 0; i < nStr.length(); i++) {
+			nReversed = nStr.charAt(i) + nReversed;
+		}
+		
+		// keep negative sign
+		if (number < 0) {
+			number = Integer.valueOf(nReversed) * -1;
+		} else {
+			number = Integer.valueOf(nReversed);
+		}
+		
+		return number;
 	}
 
 }

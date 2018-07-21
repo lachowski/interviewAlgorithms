@@ -35,8 +35,8 @@ public class ReverseStringTest {
 	@Test
 	public void shouldReverseOneLetterText() {
 		// given
-		String testString = "X";
-		String expected = "X";
+		String testString = "H";
+		String expected = "H";
 		
 		// when
 		String result = ReverseString.reverse(testString);

@@ -1,5 +1,8 @@
 package pl.mobigen.interviewAlgorithms;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * In a given string find character that is most commonly used.
  *
@@ -12,7 +15,28 @@ package pl.mobigen.interviewAlgorithms;
 public class MaxChar {
 	
 	public static String findMaxChar(String string) {
-		throw new UnsupportedOperationException();
+		Map<Character, Integer> charMap = new HashMap<>();
+		// create map with number of occurrences
+		for (int i = 0; i < string.length(); i++) {
+			Character charAt = string.charAt(i);
+			if (charMap.containsKey(charAt)) {
+				charMap.put(charAt, charMap.get(charAt) + 1);
+			} else {
+				charMap.put(charAt, 1);
+			}
+		}
+		
+		// choose max
+		int max = 0;
+		Character charMax = null;
+		for (Character key : charMap.keySet()) {
+			if (charMap.get(key) > max) {
+				max = charMap.get(key);
+				charMax = key;
+			}
+		}
+		
+		return Character.toString(charMax);
 	}
 
 }

@@ -12,7 +12,12 @@ package pl.mobigen.interviewAlgorithms;
 public class Palindrome {
 	
 	public static boolean isPalindrome(String string) {
-		throw new UnsupportedOperationException();
+		for (int i = 0; i < string.length(); i++) {
+			if (string.charAt(i) != string.charAt(string.length() - 1 - i)) {
+				return false;
+			}
+		}
+		return true;
 	}
 
 }
