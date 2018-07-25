@@ -11,8 +11,18 @@ package pl.mobigen.interviewAlgorithms;
  */
 public class Vowels {
 	
-	public static int vowels(String string) {
-		throw new UnsupportedOperationException();
+	public static int vowels(String str) {
+		String vowels = "aeiou";
+				
+		int vowelsCounter = 0;
+		str = str.toLowerCase();
+		for (int i = 0; i < str.length(); i++) {
+			int vowelIndex = vowels.indexOf(str.charAt(i));
+			if (vowelIndex != -1) {
+				vowelsCounter++;
+			}
+		}
+		return vowelsCounter;
 	}
 
 }

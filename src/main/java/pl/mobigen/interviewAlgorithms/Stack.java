@@ -1,8 +1,12 @@
 package pl.mobigen.interviewAlgorithms;
 
+import java.util.LinkedList;
+
 /**
  * Create stack data structure. It should provide method: push(), pop() and peek(). (peek return the last element but not removes it)
  * stack will operate on integers to simplifying stuff. 
+ * 
+ * Stack: element is added on 'top' of previous one, LIFO
  *
  * Examples:
  * Stack stack = new Stack();
@@ -15,16 +19,24 @@ package pl.mobigen.interviewAlgorithms;
  */
 public class Stack {
 	
+	LinkedList<Integer> dataStorage = new LinkedList<>();
+	
 	public void push(Integer element) {
-		throw new UnsupportedOperationException();
+		dataStorage.addLast(element);
 	}
 	
 	public Integer pop() {
-		throw new UnsupportedOperationException();
+		if (dataStorage.size() == 0) {
+			return null;
+		}
+		return dataStorage.removeLast();
 	}
 	
 	public Integer peek() {
-		throw new UnsupportedOperationException();
+		if (dataStorage.size() == 0) {
+			return null;
+		}
+		return dataStorage.getLast();
 	}
 
 }

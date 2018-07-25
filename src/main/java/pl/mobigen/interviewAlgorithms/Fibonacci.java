@@ -9,7 +9,12 @@ package pl.mobigen.interviewAlgorithms;
 public class Fibonacci {
 	
 	public static int fib(int n) {
-		throw new UnsupportedOperationException();
+		
+		if (n < 2) {
+			return n;
+		}
+		
+		return fib(n - 1) + fib(n - 2);
 	}
 
 }

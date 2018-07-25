@@ -14,16 +14,33 @@ package pl.mobigen.interviewAlgorithms;
  */
 public class QueueFromStack {
 	
-	public void add(Integer n) {
-		throw new UnsupportedOperationException();
+	Stack stackOne = new Stack();
+	Stack stackTwo = new Stack();
+	
+	public void add(Integer element) {
+		stackOne.push(element);
 	}
 	
 	public Integer remove() {
-		throw new UnsupportedOperationException();
+		while (stackOne.peek() != null) {
+			stackTwo.push(stackOne.pop());
+		}
+		Integer value = stackTwo.pop();
+		while (stackTwo.peek() != null) {
+			stackOne.push(stackTwo.pop());
+		}
+		return value;
 	}
 	
 	public Integer peek() {
-		throw new UnsupportedOperationException();
+		while (stackOne.peek() != null) {
+			stackTwo.push(stackOne.pop());
+		}
+		Integer value = stackTwo.peek();
+		while (stackTwo.peek() != null) {
+			stackOne.push(stackTwo.pop());
+		}
+		return value;
 	}
 
 }
